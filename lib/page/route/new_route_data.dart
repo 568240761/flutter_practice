@@ -17,7 +17,8 @@ class NewRouteData extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context, "只要99元");
           },
-          child: Text("接收到数据是$text,点击返回数据给上一个路由"),
+          textColor: Colors.blue,
+          child: Text("接收到数据[$text],点击返回数据给上一个路由"),
         ),
       ),
     );
