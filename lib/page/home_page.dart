@@ -11,14 +11,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +21,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '按下按钮的次数：',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
             FlatButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -62,13 +47,24 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               child: Text("异常捕获"),
             ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "state");
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("State生命周期"),
+            ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "base_widget_manage");
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("基础控件"),
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }

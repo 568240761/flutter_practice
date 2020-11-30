@@ -1,8 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/page/exception/throw_exception.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_practice/page/base_widget/text_widget.dart';
 
+import 'page/base_widget/base_widget_manage.dart';
+import 'page/exception/future_throw_exception.dart';
+import 'page/state_lifecycle.dart';
+import 'page/exception/exception_manage.dart';
+import 'page/exception/auto_throw_exception.dart';
+import 'page/exception/click_throw_exception.dart';
 import 'page/assets/assets_manage.dart';
 import 'page/assets/load_image.dart';
 import 'page/assets/load_image_1.dart';
@@ -13,34 +20,39 @@ import 'page/route/found_404.dart';
 import 'page/route/route_observable.dart';
 import 'page/assets/load_data.dart';
 
-//收集日志
-void collectLog(String line) {
-  print("collectLog-$line");
-}
+//收集日志，写入文件
+void collectLog(String line) {}
 
 //上报错误和日志逻辑
 void reportErrorAndLog(FlutterErrorDetails details) {
   print("reportErrorAndLog-${details.exception}");
 }
 
-//// 构建错误信息
+// 构建错误信息
 FlutterErrorDetails makeDetails(Object obj, StackTrace stack) {
+  debugPrint("makeDetails");
   return FlutterErrorDetails(exception: obj, stack: stack);
 }
 
 void main() {
+  //捕获同步代码中的异常
+  //TODO(未能拦截成功)
   FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.dumpErrorToConsole(details);
     reportErrorAndLog(details);
   };
 
   runZonedGuarded(
     () => runApp(MyApp()),
+    //捕获异步代码中的异常
     (Object obj, StackTrace stack) {
       var details = makeDetails(obj, stack);
       reportErrorAndLog(details);
     },
+    //拦截所有日志打印
     zoneSpecification: ZoneSpecification(
       print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
+        parent.print(zone, "Intercepted: $line");
         collectLog(line);
       },
     ),
@@ -68,7 +80,13 @@ class MyApp extends StatelessWidget {
         "load_data": (context) => LoadData(),
         "load_image": (context) => LoadImage(),
         "load_image_1": (context) => LoadImage1(),
-        "exception": (context) => ThrowException(),
+        "exception": (context) => ExceptionManage(),
+        "click_throw_exception": (context) => ClickThrowException(),
+        "auto_throw_exception": (context) => AutoThrowException(),
+        "future_throw_exception": (context) => FutureThrowException(),
+        "state": (context) => StateLifecycle(),
+        "base_widget_manage": (context) => BaseWidgetManage(),
+        "base_widget_text": (context) => TextWidget(),
       },
       //在路由表中没有注册，会回调该方法
       onGenerateRoute: (RouteSettings settings) {

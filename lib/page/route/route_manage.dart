@@ -24,7 +24,9 @@ class RouteManage extends StatelessWidget {
                   ),
                 );
 
+                //不会丢失日志行
                 debugPrint("debugPrint-返回的结果：$result");
+                //输出太多，有时会丢弃一些日志行
                 print("print-返回的结果：$result");
               },
               textColor: Colors.white,
