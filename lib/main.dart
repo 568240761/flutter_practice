@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_practice/page/base_widget/button_widget.dart';
+import 'package:flutter_practice/page/base_widget/image_widget.dart';
 import 'package:flutter_practice/page/base_widget/text_widget.dart';
 
 import 'page/base_widget/base_widget_manage.dart';
@@ -87,6 +89,9 @@ class MyApp extends StatelessWidget {
         "state": (context) => StateLifecycle(),
         "base_widget_manage": (context) => BaseWidgetManage(),
         "base_widget_text": (context) => TextWidget(),
+        "base_widget_button": (context) => ButtonWidget(),
+        "/base_widget/image_widget": (context) => ImageWidget(),
+        "/base_widget/progress_indicator_widget": (context) => ImageWidget(),
       },
       //在路由表中没有注册，会回调该方法
       onGenerateRoute: (RouteSettings settings) {

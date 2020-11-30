@@ -21,7 +21,7 @@ class BaseWidgetManage extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.pushNamed(context, "");
+                Navigator.pushNamed(context, "base_widget_button");
               },
               child: Text("按钮"),
               textColor: Colors.white,
@@ -29,7 +29,7 @@ class BaseWidgetManage extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.pushNamed(context, "");
+                Navigator.pushNamed(context, "/base_widget/image_widget");
               },
               child: Text("图片及ICON"),
               textColor: Colors.white,
@@ -61,7 +61,8 @@ class BaseWidgetManage extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.pushNamed(context, "");
+                Navigator.pushNamed(
+                    context, "/base_widget/progress_indicator_widget");
               },
               child: Text("进度指示器"),
               textColor: Colors.white,
