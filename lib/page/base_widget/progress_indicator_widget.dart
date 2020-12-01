@@ -12,21 +12,21 @@ class ProgressIndicatorWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             LinearProgressIndicator(
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.grey[200],
               valueColor: AlwaysStoppedAnimation(Colors.blue),
             ),
             LinearProgressIndicator(
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.grey[200],
               valueColor: AlwaysStoppedAnimation(Colors.blue),
               value: 0.3,
             ),
             CircularProgressIndicator(
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.grey[200],
               valueColor: AlwaysStoppedAnimation(Colors.blue),
               strokeWidth: 8.0,
             ),
             CircularProgressIndicator(
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.grey[200],
               valueColor: AlwaysStoppedAnimation(Colors.blue),
               value: 0.8,
             ),

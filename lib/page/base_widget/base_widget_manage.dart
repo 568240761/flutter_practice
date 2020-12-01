@@ -37,7 +37,7 @@ class BaseWidgetManage extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.pushNamed(context, "");
+                Navigator.pushNamed(context, "/base_widget/check_switch_widget");
               },
               child: Text("单选开关和复选框"),
               textColor: Colors.white,
@@ -45,7 +45,7 @@ class BaseWidgetManage extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.pushNamed(context, "");
+                Navigator.pushNamed(context, "/base-widget/textfield_widget");
               },
               child: Text("输入框"),
               textColor: Colors.white,
@@ -53,7 +53,7 @@ class BaseWidgetManage extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.pushNamed(context, "");
+                Navigator.pushNamed(context, "/base-widget/form_widget");
               },
               child: Text("表单"),
               textColor: Colors.white,

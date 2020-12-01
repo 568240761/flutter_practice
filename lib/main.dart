@@ -2,10 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_practice/page/base_widget/button_widget.dart';
-import 'package:flutter_practice/page/base_widget/image_widget.dart';
-import 'package:flutter_practice/page/base_widget/text_widget.dart';
 
+import 'page/base_widget/form_widget.dart';
+import 'page/base_widget/textfield_widget.dart';
+import 'page/base_widget/checkbox_switch_widget.dart';
+import 'page/base_widget/button_widget.dart';
+import 'page/base_widget/image_widget.dart';
+import 'page/base_widget/progress_indicator_widget.dart';
+import 'page/base_widget/text_widget.dart';
 import 'page/base_widget/base_widget_manage.dart';
 import 'page/exception/future_throw_exception.dart';
 import 'page/state_lifecycle.dart';
@@ -91,7 +95,11 @@ class MyApp extends StatelessWidget {
         "base_widget_text": (context) => TextWidget(),
         "base_widget_button": (context) => ButtonWidget(),
         "/base_widget/image_widget": (context) => ImageWidget(),
-        "/base_widget/progress_indicator_widget": (context) => ImageWidget(),
+        "/base_widget/progress_indicator_widget": (context) =>
+            ProgressIndicatorWidget(),
+        "/base_widget/check_switch_widget": (context) => CheckBoxSwitchWidget(),
+        "/base-widget/textfield_widget": (context) => TextFieldWidget(),
+        "/base-widget/form_widget": (context) => FormWidget(),
       },
       //在路由表中没有注册，会回调该方法
       onGenerateRoute: (RouteSettings settings) {
