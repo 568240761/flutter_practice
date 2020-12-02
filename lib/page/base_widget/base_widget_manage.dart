@@ -5,7 +5,7 @@ class BaseWidgetManage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("基础控件"),
+        title: Text("基础组件"),
       ),
       body: Center(
         child: Column(
