@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_practice/page/container/container_manage.dart';
 
 import 'page/layout/layout_manage.dart';
 import 'page/base_widget/form_widget.dart';
@@ -102,6 +103,7 @@ class MyApp extends StatelessWidget {
         "/base-widget/textfield_widget": (context) => TextFieldWidget(),
         "/base-widget/form_widget": (context) => FormWidget(),
         "layout_manage": (context) => LayoutManage(),
+        "container_manage": (context) => ContainerManage(),
       },
       //在路由表中没有注册，会回调该方法
       onGenerateRoute: (RouteSettings settings) {

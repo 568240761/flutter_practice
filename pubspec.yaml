@@ -48,6 +48,7 @@ flutter:
   assets:
     - images/assets.jpeg
     - images/assets_1.gif
+    - images/timg.jpg
     - data/data
 
   # An image asset can refer to one or more resolution-specific "variants", see
