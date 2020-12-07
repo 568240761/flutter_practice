@@ -67,6 +67,19 @@ class FunctionManage extends StatelessWidget {
               color: Colors.blue,
               child: Text("颜色和主题"),
             ),
+            FlatButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return CartFunction();
+                  }),
+                );
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("异步UI更新"),
+            ),
           ],
         ),
       ),
