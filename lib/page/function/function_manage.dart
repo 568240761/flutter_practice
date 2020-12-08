@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/page/function/dialog_function.dart';
+import 'package:flutter_practice/page/function/stream_builder_function.dart';
 
+import 'colors_function.dart';
+import 'future_builder_function.dart';
 import 'inherited_widget_function.dart';
 import 'provider_function.dart';
+import 'theme_function.dart';
 import 'will_pop_scope_function.dart';
 
 class FunctionManage extends StatelessWidget {
@@ -59,26 +64,65 @@ class FunctionManage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return CartFunction();
+                    return ColorsFunction();
                   }),
                 );
               },
               textColor: Colors.white,
               color: Colors.blue,
-              child: Text("颜色和主题"),
+              child: Text("颜色"),
             ),
             FlatButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return CartFunction();
+                    return ThemeFunction();
                   }),
                 );
               },
               textColor: Colors.white,
               color: Colors.blue,
-              child: Text("异步UI更新"),
+              child: Text("主题"),
+            ),
+            FlatButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return FutureBuilderFunction();
+                  }),
+                );
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("异步UI更新-FutureBuilder"),
+            ),
+            FlatButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return StreamBuilderFunction();
+                  }),
+                );
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("异步UI更新-StreamBuilder"),
+            ),
+            FlatButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return DialogFunction();
+                  }),
+                );
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("对话框"),
             ),
           ],
         ),
