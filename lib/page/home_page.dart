@@ -95,6 +95,14 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               child: Text("功能组件"),
             ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "event_notification_manage");
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("事件处理与通知"),
+            ),
           ],
         ),
       ),

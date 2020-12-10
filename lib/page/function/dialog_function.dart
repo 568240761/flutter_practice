@@ -701,18 +701,23 @@ class DialogFunctionState extends State<DialogFunction> {
     return showCupertinoModalPopup(
       context: context,
       builder: (ctx) {
-        return SizedBox(
-          height: 200,
-          child: CupertinoDatePicker(
-            mode: CupertinoDatePickerMode.dateAndTime,
-            minimumDate: date,
-            maximumDate: date.add(
-              Duration(days: 30),
+        return DecoratedBox(
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: SizedBox(
+            height: 200,
+            child: CupertinoDatePicker(
+              mode: CupertinoDatePickerMode.dateAndTime,
+              minimumDate: date,
+              maximumDate: date.add(
+                Duration(days: 30),
+              ),
+              maximumYear: date.year + 1,
+              onDateTimeChanged: (DateTime value) {
+                debugPrint(value.toString());
+              },
             ),
-            maximumYear: date.year + 1,
-            onDateTimeChanged: (DateTime value) {
-              print(value);
-            },
           ),
         );
       },
