@@ -103,6 +103,14 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               child: Text("事件处理与通知"),
             ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "animation_manage");
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("动画"),
+            ),
           ],
         ),
       ),
