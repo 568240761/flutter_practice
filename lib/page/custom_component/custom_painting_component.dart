@@ -327,6 +327,8 @@ class MyPainter extends CustomPainter {
 //1.支持多种背景渐变色。
 //2.任意弧度；进度条可以不是整圆。
 //3.可以自定义粗细、两端是否圆角等样式。
+//
+//GradientCircularProgressIndicator已经被添加进了的flukit组件库中
 class GradientCircularProgressIndicator extends StatelessWidget {
   GradientCircularProgressIndicator(
       {this.strokeWidth = 2.0,
