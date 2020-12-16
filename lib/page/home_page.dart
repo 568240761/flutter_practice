@@ -111,6 +111,14 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               child: Text("动画"),
             ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "custom_manage");
+              },
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Text("自定义组件"),
+            ),
           ],
         ),
       ),

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
+import 'page/custom_component/custom_manage.dart';
 import 'page/animation/animation_manage.dart';
 import 'page/event/event_notification_manage.dart';
 import 'page/function/function_manage.dart';
@@ -112,6 +113,7 @@ class MyApp extends StatelessWidget {
         "function_manage": (context) => FunctionManage(),
         "event_notification_manage": (context) => EventNotificationManage(),
         "animation_manage": (context) => AnimationManage(),
+        "custom_manage": (context) => CustomManage(),
       },
       //在路由表中没有注册，会回调该方法
       onGenerateRoute: (RouteSettings settings) {
