@@ -160,7 +160,6 @@ class _CartFunctionState extends State<CartFunction> {
             children: [
               //不能直接使用Text，需要使用Builder包裹，否则会报错。
               //Text("总价格：${ChangeNotifierProvider.of<CartModer>(context).totalPrice}",),
-              //TODO(为什么会报错？)
               Builder(builder: (context) {
                 debugPrint("build Text");
                 return Text(

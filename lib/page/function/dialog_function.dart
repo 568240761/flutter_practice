@@ -695,7 +695,6 @@ class DialogFunctionState extends State<DialogFunction> {
     );
   }
 
-  //TODO(背景是透明的)
   Future<DateTime> _showDatePicker2() {
     var date = DateTime.now();
     return showCupertinoModalPopup(

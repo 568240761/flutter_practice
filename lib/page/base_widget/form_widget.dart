@@ -52,7 +52,9 @@ class FormWidgetState extends State<FormWidget> {
             RaisedButton(
               onPressed: () {
                 //在这里不能通过此方式获取FormState
-                //TODO(为什么不行？)
+                //这是因为当前context与FormWidget想映射的
+                //在Widget树中，从FormWidget往上并没有Form
+                //获取到的state为null
                 var state = Form.of(context);
                 if (state != null && state.validate()) {
                   debugPrint("state验证通过了");
@@ -62,10 +64,29 @@ class FormWidgetState extends State<FormWidget> {
                   printResult(context);
                 }
               },
-              child: Text("登录"),
+              child: Text("登录-方式1"),
               textColor: Colors.white,
               color: Colors.blue,
             ),
+            Builder(builder: (context) {
+              return RaisedButton(
+                onPressed: () {
+                  //在这里可以通过此方式获取FormState
+                  var state = Form.of(context);
+                  if (state != null && state.validate()) {
+                    debugPrint("state验证通过了");
+                    printResult(context);
+                  } else if ((_globalKey.currentState as FormState)
+                      .validate()) {
+                    debugPrint("验证通过了");
+                    printResult(context);
+                  }
+                },
+                child: Text("登录-方式2"),
+                textColor: Colors.white,
+                color: Colors.blue,
+              );
+            }),
           ],
         ),
         onWillPop: () async {

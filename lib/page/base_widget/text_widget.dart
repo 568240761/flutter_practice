@@ -1,6 +1,16 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class TextWidget extends StatelessWidget {
+  TapGestureRecognizer _tapGestureRecognizer = TapGestureRecognizer();
+
+  TextWidget({Key key}) : super(key: key) {
+    _tapGestureRecognizer.onTapDown = (TapDownDetails details) {
+      //TODO(打印日志有时会丢失)
+      debugPrint("点击了链接(https://flutterchina.club)");
+    };
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +39,6 @@ class TextWidget extends StatelessWidget {
               "Hello Flutter!" * 10,
               textAlign: TextAlign.center,
             ),
-            //TODO(缺少字体文件)
             Text(
               "Hello Flutter!",
               style: TextStyle(
@@ -51,8 +60,7 @@ class TextWidget extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.blue,
                     ),
-                    //TODO(手势监听未完成)
-                    recognizer: null,
+                    recognizer: _tapGestureRecognizer,
                   ),
                 ],
               ),
@@ -70,8 +78,9 @@ class TextWidget extends StatelessWidget {
                   Text(
                     "I am Yang",
                     style: TextStyle(
-                        inherit: false, //不继承默认样式
-                        color: Colors.grey,),
+                      inherit: false, //不继承默认样式
+                      color: Colors.grey,
+                    ),
                   ),
                 ],
               ),
