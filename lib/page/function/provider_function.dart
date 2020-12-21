@@ -190,21 +190,6 @@ class _CartFunctionState extends State<CartFunction> {
                   color: Colors.blue,
                   textColor: Colors.white,
                 );
-
-                //如果在外层添加Padding包裹，即使不注册依赖，每次依赖改变也会重新build。
-                //TODO(为什么这样？)
-                // return Padding(
-                //   padding: EdgeInsets.only(top: 20.0),
-                //   child: RaisedButton(
-                //     onPressed: () {
-                //       ChangeNotifierProvider.of<CartModer>(context,listen: false)
-                //           .addItem(Item(20.0, 1));
-                //     },
-                //     child: Text("添加商品"),
-                //     color: Colors.blue,
-                //     textColor: Colors.white,
-                //   ),
-                // );
               }),
             ],
           ),

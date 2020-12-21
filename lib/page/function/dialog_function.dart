@@ -162,15 +162,16 @@ class DialogFunctionState extends State<DialogFunction> {
                 color: Colors.blue,
                 child: Text("底部菜单列表对话框"),
               ),
-              RaisedButton(
-                onPressed: () {
-                  //TODO(有问题)
-                  _showBottomSheet();
-                },
-                textColor: Colors.white,
-                color: Colors.blue,
-                child: Text("从底部弹出全屏对话框"),
-              ),
+              Builder(builder: (context) {
+                return RaisedButton(
+                  onPressed: () {
+                    _showBottomSheet(context);
+                  },
+                  textColor: Colors.white,
+                  color: Colors.blue,
+                  child: Text("从底部弹出全屏对话框"),
+                );
+              }),
               RaisedButton(
                 onPressed: () {
                   showLoadingDialog1();
@@ -606,7 +607,7 @@ class DialogFunctionState extends State<DialogFunction> {
     );
   }
 
-  PersistentBottomSheetController<int> _showBottomSheet() {
+  PersistentBottomSheetController<int> _showBottomSheet(BuildContext context) {
     //showBottomSheet方法，该方法会从设备底部向上弹出一个全屏的菜单列表。
     //PersistentBottomSheetController中包含了一些控制对话框的方法比如close方法可以关闭该对话框。
     //showBottomSheet和上面介绍的弹出对话框的方法原理不同：

@@ -48,13 +48,6 @@ FlutterErrorDetails makeDetails(Object obj, StackTrace stack) {
 }
 
 void main() {
-  //捕获同步代码中的异常
-  //TODO(未能拦截成功)
-  FlutterError.onError = (FlutterErrorDetails details) {
-    FlutterError.dumpErrorToConsole(details);
-    reportErrorAndLog(details);
-  };
-
   runZonedGuarded(
     () => runApp(MyApp()),
     //捕获异步代码中的异常
@@ -70,6 +63,12 @@ void main() {
       },
     ),
   );
+
+  //捕获同步代码中的异常
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.dumpErrorToConsole(details);
+    reportErrorAndLog(details);
+  };
 }
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
