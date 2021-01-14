@@ -11,8 +11,7 @@ class HeroAnimation extends StatelessWidget {
       appBar: AppBar(
         title: Text("Hero动画-第一个Hero"),
       ),
-      body: Center(
-        child: InkWell(
+      body: InkWell(
           child: Hero(
             tag: "avatar", //唯一标记，前后两个路由页Hero的tag必须相同
             child: ClipOval(
@@ -20,8 +19,7 @@ class HeroAnimation extends StatelessWidget {
                 "images/assets.jpeg",
                 width: 50.0,
               ),
-            ),
-          ),
+            ),),
           onTap: () {
             Navigator.push(
               context,
@@ -48,7 +46,6 @@ class HeroAnimation extends StatelessWidget {
             );
           },
         ),
-      ),
     );
   }
 }
