@@ -366,7 +366,8 @@ class DialogFunctionState extends State<DialogFunction> {
     bool barrierDismissible = true,
     WidgetBuilder builder,
   }) {
-    final ThemeData theme = Theme.of(context, shadowThemeOnly: true);
+    // final ThemeData theme = Theme.of(context, shadowThemeOnly: true);
+    final ThemeData theme = Theme.of(context);
     //showDialog方法正是showGeneralDialog的一个封装，定制了Material风格对话框的遮罩颜色和动画，Material风格对话框打开/关闭动画是一个Fade（渐隐渐显）动画。
     return showGeneralDialog(
       context: context,
